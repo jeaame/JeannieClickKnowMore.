@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+    <!-- <script src="sketch.js"></script> -->
+    <script src="p5.dom.js"></script>
+    <style>
+    /* Tooltip container */
+.tooltip {
+position: relative;
+display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 320px;
+background-color: #6985CB;
+color: #fff;
+text-align: center;
+padding: 5px 0;
+border-radius: 6px;
+
+/* Position the tooltip text */
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -60px;
+
+/* Fade in tooltip */
+opacity: 0;
+transition: opacity 1s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+visibility: visible;
+opacity: 1;
+}
+/*sourcehttps://www.w3schools.com/howto/howto_css_tooltip.asp*/
+    body {
+        background-color: rgb(144, 76, 136);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    .outer {
+      display: flex;
+      flex-direction: row;
+    }
+    .outer2 {
+      display: flex;
+      flex-direction: row;
+      align-items: left;
+    }
+
+  /*  img {
+      height: 150px;
+      width: auto;
+    }*/
+    .centered {
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       /* bring your own prefixes */
+       transform: translate(-30%, -50%);
+    }
+
+    .img1 {
+       border-radius: 50%;
+       -webkit-transition: -webkit-transform .8s ease-in-out;
+        transition:         transform .8s ease-in-out;
+    }
+
+    .img1:hover {
+       -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    .img2 {
+       border-radius: 50%;
+       -webkit-transition: -webkit-transform .8s ease-in-out;
+        transition:         transform .8s ease-in-out;
+    }
+    @font-face {
+        font-family: myFirstFont;
+        src: url(sansation_light.woff);
+    }
+    div {
+        font-family: myFirstFont;
+    }
+    div.relative {
+  position: relative;
+  left: -300px;
+   top:-100px;
+   }
+   div.gender {
+   position: relative;
+   left: 30px;
+  }
+  div.genzlogo{
+    position: relative;
+    left: 80px;
+  }
+  div.speaker {
+    position: relative;
+    left: 200px;
+  }
+  div.no {
+    position: relative;
+    left: 250px;
+  }
+  h2 {
+    padding: 40px;
+    padding-top: 0;
+    text-align: center;
+  }
+  input {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .top {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 160px;
+    position: relative;
+    left: 400px;
+  }
+
+  #timeline {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .first-div {
+
+    flex: 2;
+    width: 80%;
+  }
+
+  .second-div {
+    flex: 1;
+    width: 250px;
+  }
+
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+
+    </style>
+
+  </head>
+  <body>
+
+  <div class="main">
+    <div class="first-div">
+      <div class="top">
+        <div id="pics">
+          <div>
+            <img class="img2"; style="width:140px; height:140px;" src="./teen.png" />
+          </div>
+
+          <div class= "relative">
+            <div class="tooltip">
+                <span class="tooltiptext"> thanks for stoping by ! -Jeannie </span>
+                <img class="img1"; style="width:200px; height:200px;" src="./brain.png" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h2>Computing and Its Specific Social Effects On The Coming Generation</h2>
+      <input type="range" min= '0' max='300' id="slider" value="0">
+      <h2> ↡examples of these instances ↡</h2>
+
+
+
+        <div class="outer">
+          <div>
+            <div class="tooltip">
+              <div class= "gender">
+               <span class="tooltiptext"> LGBTQ+ awareness: by using hashtags and starting online campaigns on platforms such as facebook, instagram, and youtube, activists were able to bring awareness to teenagers on the topic of LGBTQ+ issues and stories. Campaigns such as "It Gets Better", "Human Rights", and "#ComingOutMatters" use these platforms to educate and support the LGBTQ+ community and allies. Due to many schools not providing enough medically-accurate, age-appropriate health and sexuality information, LGBTQ+ youth turn to seek out the information online on their own.</span>
+              <img class="img1"; style="width:110px; height:110px;" src="./emojiappleflag.png" />
+            </div>
+          </div>
+        </div>
+
+        <div id="SOMETHING">
+        </div>
+
+        <div>
+          <div class="tooltip">
+            <div class= "genzlogo">
+            <span class="tooltiptext"> Gen Z is the most educated generation and accustomed to technology than any other. 85% of gen Z uses social media to learn about products and news. Almost half of Gen Z is connected online for more than 10 hours a day. The people in this generation take full advantage of the internet and technology that has been given to them, and they use it in which they make blogs and accounts through multiple social media platforms to express their feelings and opinions. By Gen Z being the main users of these platforms, the opinions of these people are posted and attract the attention of others-- this causes/caused multiple movements to take place or become more publicised</span>
+            <img class="img1"; style="width:100px; height:100px;" src="./genzlogo.png" />
+            </div>
+          </div>
+        </div>
+
+        <div class="outer">
+          <div>
+            <div class="tooltip">
+              <div class= "speaker">
+                <span class="tooltiptext"> Political Awareness: As the Washington Post had stated in their story covering teenagers' viewpoint on political issues due to being exposed to social media, 'we’ve found that young people who are involved in online communities become more engaged in politics. " As a teen, I get most of my news from accounts focusing on educating the community. These accounts give you all the details about a certain event and different viewpoints, therefore allowing you to decide who to side with. </span>
+              <img class="img1"; style="width:100px; height:100px;" src="./speakerphone.png" />
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tooltip">
+          <div class= "no">
+            <span class="tooltiptext"> As I scroll through social media, I see advertisments for petitions to stop or start projects for the common good. Websites like Change.org have succeeded in many cases due to having internet users sign petitions like freeing a British-Iranian woman from jail, or keeping a woman on bank notes. </span>
+           <img class="img1"; style="width:100px; height:100px;" src="./noo.png" />
+         </div>
+       </div>
+     </div>
+
+   </div>
+   </div>
+
+   <div class="second-div">
+    <div id="timeline">
+    </div>
+   </div>
+ </div>
+
+ <script src="sketch.js"></script>
+
+</body>
+</html>
